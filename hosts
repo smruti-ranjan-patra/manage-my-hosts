@@ -1,0 +1,41 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+
+127.0.0.1 localhost.com
+127.0.0.1 local.commonfloor.com
+127.0.0.1 teja1.kuikr.com
+127.0.0.1 teja8.kuikr.com
+127.0.0.1 teja9.kuikr.com
+127.0.0.1 teja10.kuikr.com
+192.168.124.122 stage.commonfloor.com teja88.kuikr.com teja99.kuikr.com teja100.kuikr.com
+
+127.0.0.1 dashboard.commonfloor.com
+127.0.0.1 teja88.kuikr.com
+127.0.0.1 teja99.kuikr.com
+127.0.0.1 teja100.kuikr.com
+
+192.168.124.57 secure.quikr.com gurgaon.quikr.com teja10.kuikr.com
+13.250.216.74  www.commonfloor.com commonfloor.com content.commonfloor.com
+172.16.31.102 reuat-29-150.com reuat-29-150-9003.com
+172.16.31.102 reprod-38-21.com reprod-38-20.com
+172.16.31.102 reuat-29-150-9003.com
+172.16.31.102 reuat-29-150.com
+172.16.31.102 reuat-29-150-9003.com
+172.16.31.102 reuat-29-150-9004.com
+172.16.31.102 reuat-29-150-9005.com
+172.16.31.102 monetization-178.com
+172.16.34.41 dblogin.quikr.com
+
+# for testing purpose
+#127.0.0.1 local.cf-optimise.com	
+
+#127.0.0.1 lol
+
