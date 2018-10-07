@@ -1,5 +1,5 @@
 {
-  "name": "josts-manager",
+  "name": "hosts-manager",
   "version": "1.0.0",
   "description": "Manage hosts file with ease",
   "main": "hosts.js",
