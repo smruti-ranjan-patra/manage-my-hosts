@@ -23,7 +23,7 @@ commander
     .option('-l, --list', 'Shows the list of hosts', displayHosts)
     .option('-d, --deactivate <lineNum>', 'Mention the line number to deactive the host', deactivateHost)
     .option('-a, --activate <lineNum>', 'Mention the line number to activate the host', activateHost)
-    .option('-c, --create <ip>', 'Mention the ip and domain to be added to the hosts file', createHost)
+    .option('-c, --create <ip> <domainm>', 'Mention the ip and domain to be added to the hosts file', createHost)
     .option('-r, --remove <lineNum>', 'Mention the line number to remove the host from the hosts file', removeHost)
     .option('-p, --print', 'Prints the entire hosts file', printHosts)
     .parse(process.argv);

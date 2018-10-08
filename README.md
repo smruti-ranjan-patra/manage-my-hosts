@@ -10,3 +10,7 @@ npm install manage-my-hosts -g
 ```
 sudo mmh
 ```
+
+#### Supported OS
+- Darwin
+- Linux
