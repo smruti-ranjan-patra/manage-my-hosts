@@ -1,5 +1,3 @@
-#! /usr/local/bin/node
-
 const config = require('./config');
 const colors = require('colors');
 const commander = require('commander');
@@ -15,12 +13,13 @@ if (process.argv[2] === undefined) {
 
 // path to hosts file
 const filePath = config.filePath;
+// const filePath = '/Users/smrutiranjanpatra/workspace/test/modify_host/hosts';
 
 const tableBorderColor = config.tableBorderColor;
 const tableHeaderColor = config.tableHeaderColor;
 
 commander
-    .version('1.0.0', '-v, --version')
+    .version('0.1.0', '-v, --version')
     .option('-l, --list', 'Shows the list of hosts', displayHosts)
     .option('-d, --deactivate <lineNum>', 'Mention the line number to deactive the host', deactivateHost)
     .option('-a, --activate <lineNum>', 'Mention the line number to activate the host', activateHost)
