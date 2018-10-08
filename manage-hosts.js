@@ -13,7 +13,6 @@ if (process.argv[2] === undefined) {
 
 // path to hosts file
 const filePath = config.filePath;
-// const filePath = '/Users/smrutiranjanpatra/workspace/test/modify_host/hosts';
 
 const tableBorderColor = config.tableBorderColor;
 const tableHeaderColor = config.tableHeaderColor;
@@ -58,6 +57,7 @@ function deactivateHost(lineNum) {
     let data = readFile();
     let newFileData = '';
     let commentSymbol = '';
+
     data.forEach((value, key) => {
         commentSymbol = (lineNum - 1 == key && !value.startsWith('#')) ? '#' : '';
         newFileData += commentSymbol + value + os.EOL;
@@ -70,6 +70,7 @@ function deactivateHost(lineNum) {
 function activateHost(lineNum) {
     let data = readFile();
     let newFileData = '';
+    
     data.forEach((value, key) => {
         if (lineNum - 1 == key && value.startsWith('#')) {
             value = value.slice(1, value.length)
