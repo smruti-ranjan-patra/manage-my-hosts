@@ -31,5 +31,10 @@ sudo mmh -l
 ```
 
 #### Supported OS
-- Darwin
-- Linux
+ - [x] Darwin
+ - [x] Linux
+ - [ ] Windows
+
+**Notes :**
+npm audit security report
+found 0 vulnerabilities
