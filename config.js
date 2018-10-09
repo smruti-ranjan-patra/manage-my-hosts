@@ -1,5 +1,6 @@
 const config = {
-    filePath : '/etc/hosts',
+    filePath : '/etc/',
+    backupFileName : 'hosts_bk_mmh',
     tableBorderColor : 'cyan',
     tableHeaderColor : 'yellow'
 }
