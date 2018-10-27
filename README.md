@@ -11,10 +11,17 @@
 npm install manage-my-hosts -g
 ```
 
-# Usage
+# Usage :
+### For Linux / Darwin
 ```
 sudo mmh -h
 sudo mmh -l
+```
+### For Windows
+Open Command Prompt with administrative permission
+```
+mmh -h
+mmh -l
 ```
 
 ```
@@ -34,7 +41,7 @@ sudo mmh -l
 #### Supported OS
  - [x] Darwin
  - [x] Linux
- - [ ] Windows
+ - [x] Windows
 
 **Notes :**
 npm audit security report

@@ -7,8 +7,15 @@ const os = require('os');
 const Confirm = require('prompt-confirm');
 
 // path to hosts file
-const filePath = config.filePath + 'hosts';
-const backupFilePath = config.filePath + config.backupFileName;
+let filePath;
+if (os.platform() === 'linux' || os.platform() === 'darwin') {
+    filePath = config.filePathUnix + 'hosts';
+} else if (os.platform() === 'win32') {
+    filePath = config.filePathWindows + 'hosts';
+} else {
+    console.log(colors.red('Environment not supported !'));
+    throw 'Error occurred';
+}
 
 const tableBorderColor = config.tableBorderColor;
 const tableHeaderColor = config.tableHeaderColor;
@@ -59,7 +66,7 @@ function displayHosts() {
             const serialNum = colors.bold(key + 1);
             const isActive = !value.startsWith('#');
             const status = isActive ? colors.bold.green('ACTIVE') : colors.bold.red('INACTIVE');
-            const arr = value.replace(/#/g, '').split(/\s+/);
+            const arr = value.replace(/#\s*/g, '').split(/\s+/);
             const ip = isActive ? colors.green(arr[0]) : colors.red(arr[0])
             const domain = arr.slice(1, arr.length).join(' ');
             hostArray.push([serialNum, ip, domain, status]);
@@ -183,7 +190,7 @@ function doFormatHosts() {
     } else {
         data.forEach((value, key) => {
             if (regexForIp.test(value)) {
-                const arr = value.replace(/#/g, '').split(/\s+/);
+                const arr = value.replace(/#\s*/g, '').split(/\s+/);
                 const arrLength = arr.length;
                 const ip = arr[0];
 
@@ -211,7 +218,7 @@ function searchHosts(searchQuery) {
             const serialNum = colors.bold(key + 1);
             const isActive = !value.startsWith('#');
             const status = isActive ? colors.bold.green('ACTIVE') : colors.bold.red('INACTIVE');
-            const arr = value.replace(/#/g, '').split(/\s+/);
+            const arr = value.replace(/#\s*/g, '').split(/\s+/);
             const ip = isActive ? colors.green(arr[0]) : colors.red(arr[0])
             const domain = arr.slice(1, arr.length).join(' ');
             searchResult.push([serialNum, ip, domain, status]);
