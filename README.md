@@ -39,9 +39,9 @@ mmh -l
 ```
 
 #### Supported OS
- - [x] Darwin
- - [x] Linux
- - [x] Windows
+  [x] Darwin
+  [x] Linux
+  [x] Windows
 
 **Notes :**
 npm audit security report

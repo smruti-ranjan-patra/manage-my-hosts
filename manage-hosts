@@ -37,8 +37,8 @@ Array.prototype.inArray = function (value) {
 commander
     .version('1.1.5', '-v, --version')
     .option('-l, --list', 'Shows the list of hosts in a tabular format', displayHosts)
-    .option('-d, --deactivate <lineNum> or <[2,3,5,8]> or <[2..9]>', 'Mention the line number to deactive the host', deactivateHost)
-    .option('-a, --activate <lineNum> or <[2,3,5,8]> or <[2..9]>', 'Mention the line number to activate the host', activateHost)
+    .option('-d, --deactivate <lineNum> or <[2,3,5,8]> or <[2..9]> or all', 'Mention the line number to deactive the host', deactivateHost)
+    .option('-a, --activate <lineNum> or <[2,3,5,8]> or <[2..9]> or all', 'Mention the line number to activate the host', activateHost)
     .option('-c, --create <ip> <domain>', 'Mention the IP and domain to be added to the hosts file', createHost)
     .option('-r, --remove <lineNum>', 'Mention the line number to remove the host from the hosts file', removeHost)
     .option('-p, --print', 'Prints the entire hosts file', printHosts)
@@ -87,13 +87,20 @@ function displayHosts() {
 }
 
 function deactivateHost(lineNum) {
-    lineArray = parseArgumentList(lineNum);
+    let lineArray;
+    let deactivateAll = false;
     const data = readFile();
     let newFileData = '';
     let commentSymbol = '';
 
+    if (lineNum.toLowerCase() === 'all') {
+        deactivateAll = true;
+    } else {
+        lineArray = parseArgumentList(lineNum);
+    }
+
     data.forEach((value, key) => {
-        commentSymbol = (lineArray.inArray(key + 1) && !value.startsWith('#')) ? '#' : '';
+        commentSymbol = ((deactivateAll || lineArray.inArray(key + 1)) && (!value.startsWith('#') && regexForIp.test(value))) ? '#' : '';
         newFileData += commentSymbol + value + os.EOL;
     });
 
@@ -102,12 +109,19 @@ function deactivateHost(lineNum) {
 }
 
 function activateHost(lineNum) {
-    lineArray = parseArgumentList(lineNum);
+    let lineArray;
+    let activateAll = false;
     const data = readFile();
     let newFileData = '';
 
+    if (lineNum.toLowerCase() === 'all') {
+        activateAll = true;
+    } else {
+        lineArray = parseArgumentList(lineNum);
+    }
+    
     data.forEach((value, key) => {
-        if (lineArray.inArray(key + 1) && value.startsWith('#')) {
+        if ((activateAll || lineArray.inArray(key + 1)) && value.startsWith('#') && regexForIp.test(value)) {
             value = value.replace(/^#+/, '')
         }
         newFileData += value + os.EOL;
