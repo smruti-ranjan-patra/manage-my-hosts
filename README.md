@@ -25,23 +25,23 @@ mmh -l
 ```
 
 ```
--v, --version                                          output the version number
--l, --list                                             Shows the list of hosts in a tabular format
--d, --deactivate <lineNum> or <[2,3,5,8]> or <[2..9]>  Mention the line number to deactive the host
--a, --activate <lineNum> or <[2,3,5,8]> or <[2..9]>    Mention the line number to activate the host
--c, --create <ip> <domain>                             Mention the IP and domain to be added to the hosts file
--r, --remove <lineNum>                                 Mention the line number to remove the host from the hosts file
--p, --print                                            Prints the entire hosts file
--f, --format                                           Format your hosts file to manage them easily
--b, --backup                                           Backup your hosts file
--s, --search <searchQuery>                             Search your IP or domain name
--h, --help                                             output usage information
+-v, --version                                                   output the version number
+-l, --list                                                      Shows the list of hosts in a tabular format
+-d, --deactivate <lineNum> or <[2,3,5,8]> or <[2..9]> or all    Mention the line number to deactive the host
+-a, --activate <lineNum> or <[2,3,5,8]> or <[2..9]> or all      Mention the line number to activate the host
+-c, --create <ip> <domain>                                      Mention the IP and domain to be added to the hosts file
+-r, --remove <lineNum>                                          Mention the line number to remove the host from the hosts file
+-p, --print                                                     Prints the entire hosts file
+-f, --format                                                    Format your hosts file to manage them easily
+-b, --backup                                                    Backup your hosts file
+-s, --search <searchQuery>                                      Search your IP or domain name
+-h, --help                                                      output usage information
 ```
 
 #### Supported OS
-  [x] Darwin
-  [x] Linux
-  [x] Windows
+- [x] Darwin
+- [x] Linux
+- [x] Windows
 
 **Notes :**
 npm audit security report
