@@ -35,7 +35,7 @@ Array.prototype.inArray = function (value) {
 };
 
 commander
-    .version('1.1.5', '-v, --version')
+    .version('1.3.3', '-v, --version')
     .option('-l, --list', 'Shows the list of hosts in a tabular format', displayHosts)
     .option('-d, --deactivate <lineNum> or <[2,3,5,8]> or <[2..9]> or all', 'Mention the line number to deactive the host', deactivateHost)
     .option('-a, --activate <lineNum> or <[2,3,5,8]> or <[2..9]> or all', 'Mention the line number to activate the host', activateHost)
